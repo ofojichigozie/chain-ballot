@@ -1,0 +1,223 @@
+[
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "startTime_", "type": "uint256" },
+      { "internalType": "uint256", "name": "endTime_", "type": "uint256" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "candidates",
+    "outputs": [
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "partyShortcut", "type": "string" },
+      { "internalType": "string", "name": "partyFlag", "type": "string" },
+      {
+        "internalType": "uint256",
+        "name": "nominationNumber",
+        "type": "uint256"
+      },
+      { "internalType": "uint8", "name": "stateCode", "type": "uint8" },
+      { "internalType": "uint8", "name": "constituencyCode", "type": "uint8" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "voterIdentityNumber",
+        "type": "uint256"
+      }
+    ],
+    "name": "didCurrentVoterVoted",
+    "outputs": [
+      { "internalType": "bool", "name": "userVoted_", "type": "bool" },
+      {
+        "components": [
+          { "internalType": "string", "name": "name", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "partyShortcut",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "partyFlag", "type": "string" },
+          {
+            "internalType": "uint256",
+            "name": "nominationNumber",
+            "type": "uint256"
+          },
+          { "internalType": "uint8", "name": "stateCode", "type": "uint8" },
+          {
+            "internalType": "uint8",
+            "name": "constituencyCode",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Types.Candidate",
+        "name": "candidate_",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "endTime_", "type": "uint256" },
+      { "internalType": "uint256", "name": "currentTime_", "type": "uint256" }
+    ],
+    "name": "extendVotingTime",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "voterIdentityNumber",
+        "type": "uint256"
+      }
+    ],
+    "name": "getCandidateList",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "name", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "partyShortcut",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "partyFlag", "type": "string" },
+          {
+            "internalType": "uint256",
+            "name": "nominationNumber",
+            "type": "uint256"
+          },
+          { "internalType": "uint8", "name": "stateCode", "type": "uint8" },
+          {
+            "internalType": "uint8",
+            "name": "constituencyCode",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Types.Candidate[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "currentTime_", "type": "uint256" }
+    ],
+    "name": "getResults",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "name", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "partyShortcut",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "partyFlag", "type": "string" },
+          { "internalType": "uint256", "name": "voteCount", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "nominationNumber",
+            "type": "uint256"
+          },
+          { "internalType": "uint8", "name": "stateCode", "type": "uint8" },
+          {
+            "internalType": "uint8",
+            "name": "constituencyCode",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct Types.Results[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getVotingEndTime",
+    "outputs": [
+      { "internalType": "uint256", "name": "endTime_", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "voterIdentityNumber",
+        "type": "uint256"
+      }
+    ],
+    "name": "isVoterEligible",
+    "outputs": [
+      { "internalType": "bool", "name": "voterEligible_", "type": "bool" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "name_", "type": "string" },
+      {
+        "internalType": "uint256",
+        "name": "identityNumber_",
+        "type": "uint256"
+      },
+      { "internalType": "uint8", "name": "age_", "type": "uint8" },
+      { "internalType": "uint8", "name": "stateCode_", "type": "uint8" },
+      { "internalType": "uint8", "name": "constituencyCode_", "type": "uint8" }
+    ],
+    "name": "register",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "startTime_", "type": "uint256" },
+      { "internalType": "uint256", "name": "currentTime_", "type": "uint256" }
+    ],
+    "name": "updateVotingStartTime",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "nominationNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "voterIdentityNumber",
+        "type": "uint256"
+      },
+      { "internalType": "uint256", "name": "currentTime_", "type": "uint256" }
+    ],
+    "name": "vote",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

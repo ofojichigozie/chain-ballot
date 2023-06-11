@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "fullName": "OMEDEL PETER",
+    "course": "DCE",
+    "identityNumber": "20220109066"
+  },
+  {
+    "id": 2,
+    "fullName": "CHELANGAT CALEB",
+    "course": "DCE",
+    "identityNumber": "20220109553"
+  },
+  {
+    "id": 3,
+    "fullName": "ATUHWERIRE AMBROSE",
+    "course": "BSEE",
+    "identityNumber": "20220811158"
+  },
+  {
+    "id": 4,
+    "fullName": "SSEBANJA GODFREY",
+    "course": "DCE",
+    "identityNumber": "20220811548"
+  },
+  {
+    "id": 5,
+    "fullName": "SSERUBIDDE FARID",
+    "course": "BSCE",
+    "identityNumber": "20220811583"
+  },
+  {
+    "id": 6,
+    "fullName": "KIZZA DAVID",
+    "course": "DCE",
+    "identityNumber": "20220811807"
+  },
+  {
+    "id": 7,
+    "fullName": "NAMUSASIZI DESIRE",
+    "course": "BSCE",
+    "identityNumber": "20220811953"
+  },
+  {
+    "id": 8,
+    "fullName": "MUNGUNGEYO BRUCE",
+    "course": "BSCE",
+    "identityNumber": "20220812107"
+  },
+  {
+    "id": 9,
+    "fullName": "MFITE MAMBO ISRAEL",
+    "course": "BCI",
+    "identityNumber": "20220812122"
+  },
+  {
+    "id": 10,
+    "fullName": "ABDU BASTI",
+    "course": "BSME",
+    "identityNumber": "20220812147"
+  },
+  {
+    "id": 11,
+    "fullName": "ADARE SANDRA",
+    "course": "BSME",
+    "identityNumber": "20220812167"
+  },
+  {
+    "id": 12,
+    "fullName": "MUGALA FATUMA",
+    "course": "BSCE",
+    "identityNumber": "20220812169"
+  },
+  {
+    "id": 13,
+    "fullName": "ADAM IDRISS ABDRAMANE DICKO",
+    "course": "BSME",
+    "identityNumber": "20220812287"
+  },
+  {
+    "id": 14,
+    "fullName": "TUHEIRWE NORIS",
+    "course": "DCE",
+    "identityNumber": "20220812307"
+  },
+  {
+    "id": 15,
+    "fullName": "NATUKWASA BRENDA",
+    "course": "DCE",
+    "identityNumber": "20220812331"
+  },
+  {
+    "id": 16,
+    "fullName": "BANYEMEREIZE JOSEPH",
+    "course": "DCE",
+    "identityNumber": "20220812362"
+  },
+  {
+    "id": 17,
+    "fullName": "NYEBUOL LUKE KUE",
+    "course": "BSCE",
+    "identityNumber": "20220812474"
+  },
+  {
+    "id": 18,
+    "fullName": "TWINOMUJUNI JOHNSON",
+    "course": "DCE",
+    "identityNumber": "20220812553"
+  },
+  {
+    "id": 19,
+    "fullName": "KATUMBA ROLAND",
+    "course": "BSCE",
+    "identityNumber": "20220812578"
+  },
+  {
+    "id": 20,
+    "fullName": "ADAM ISSA",
+    "course": "DCE",
+    "identityNumber": "20220812633"
+  },
+  {
+    "id": 21,
+    "fullName": "MUGISHA AMON",
+    "course": "DEE",
+    "identityNumber": "20220812639"
+  },
+  {
+    "id": 22,
+    "fullName": "SSEKANJAKO CYRUS",
+    "course": "BSCE",
+    "identityNumber": "20220812860"
+  },
+  {
+    "id": 23,
+    "fullName": "OTOKE JOSEPH",
+    "course": "BSCE",
+    "identityNumber": "20220812891"
+  },
+  {
+    "id": 24,
+    "fullName": "TWIJUKYE PAPIUS",
+    "course": "BSCE",
+    "identityNumber": "20220812947"
+  },
+  {
+    "id": 25,
+    "fullName": "SSEGONGA HUSSEIN",
+    "course": "BSME",
+    "identityNumber": "20220812967"
+  },
+  {
+    "id": 26,
+    "fullName": "EMESU JACOB",
+    "course": "BSEE",
+    "identityNumber": "20230113729"
+  },
+  {
+    "id": 27,
+    "fullName": "WATUM BOB WALKER ",
+    "course": "DCE",
+    "identityNumber": "20230114605"
+  },
+  {
+    "id": 28,
+    "fullName": "IKURET LOYCE",
+    "course": "BSEE",
+    "identityNumber": "20230114729"
+  },
+  {
+    "id": 29,
+    "fullName": "BAHIZI NIYOMUGABO JUSTIN",
+    "course": "BSTC",
+    "identityNumber": "20230114946"
+  },
+  {
+    "id": 30,
+    "fullName": "BAKEHAYO HENRY",
+    "course": "DCE",
+    "identityNumber": "20230114966"
+  }
+]

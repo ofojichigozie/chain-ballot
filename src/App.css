@@ -1,0 +1,220 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(to right, #000000ef, #000000ea),
+    url("./assets/background.jpg");
+  color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* CUSTOMIZING PLACEHOLDER IN INPUT FIELDS */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: 16px;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: 16px;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: 16px;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: 16px;
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar img {
+  width: 50px;
+  height: 55px;
+}
+
+.navbar .nav-link {
+  color: #fcd467 !important;
+  font-size: 1rem;
+}
+
+.navbar button:focus {
+  color: #fff;
+  background-color: transparent !important;
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #222222ef, #000000),
+    url("./assets/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: -8px 0px 8px #000000;
+}
+
+main h1 {
+  width: 600px;
+  max-width: 90vw;
+  color: #ffffff !important;
+}
+
+main .register-link {
+  width: 150px;
+  background-color: #fcd467 !important;
+}
+
+main .vote-link {
+  width: 150px;
+  color: #fcd467 !important;
+  border: 1px solid #fcd467 !important;
+}
+
+main p {
+  color: #fcd467 !important;
+}
+
+.register {
+  margin-top: 3rem;
+}
+
+.register .form-box {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background-color: #00000034;
+  box-shadow: rgba(150, 158, 165, 0.2) 0px 8px 24px;
+}
+
+.register .form-box h4 {
+  color: #fcd467 !important;
+}
+
+.register input,
+.register select,
+.results select {
+  font-size: 1rem !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  color: #ffff;
+}
+
+.register select:invalid,
+.results select:invalid {
+  color: #747474;
+}
+
+.register select:valid,
+.results select:valid {
+  color: #ffffff;
+}
+
+.register input:-webkit-autofill,
+.register input:-webkit-autofill:hover,
+.register input:-webkit-autofill:focus {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  -webkit-text-fill-color: rgb(246, 255, 125);
+  -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.register .form-box .btn {
+  color: rgb(0, 0, 0);
+  background-color: #fcd467 !important;
+}
+
+.register .form-box .btn:disabled {
+  color: rgb(0, 0, 0);
+  background-color: #d1d0d0a8 !important;
+}
+
+.vote,
+.results {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.vote .btn,
+.results .btn {
+  color: rgb(0, 0, 0);
+  background-color: #fcd467 !important;
+}
+
+.vote .btn,
+.results .btn {
+  color: rgb(0, 0, 0);
+  background-color: #fcd467 !important;
+}
+
+.vote .btn:disabled,
+.results .btn:disabled {
+  color: rgb(0, 0, 0);
+  background-color: #d1d0d0a8 !important;
+}
+
+.vote .candidate-item,
+.results .result-item {
+  border-radius: 0.5rem;
+  background-color: #ffffff5b !important;
+}
+
+.vote .selected-candidate {
+  background-color: transparent !important;
+  border: 1px solid #ffffff5b;
+}
+
+.vote .candidate-item {
+  position: relative;
+}
+
+.vote .candidate-item .checked-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.vote .candidate-item h5,
+.results .result-item h5 {
+  margin: 0 !important;
+}
+
+.vote .candidate-item span,
+.results .result-item span {
+  font-size: 0.8rem;
+  color: #fcd467;
+}
+
+.results form {
+  border-radius: 0.5rem;
+  border: 1px solid #ffffff15;
+}
+
+@media screen and (max-width: 650px) {
+}
