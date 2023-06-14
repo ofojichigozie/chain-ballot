@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { CandidateItem, Button } from "../components";
 import useWeb3 from "../hooks/useWeb3";
@@ -18,6 +19,7 @@ export default function Vote() {
   } = useWeb3();
   const { handleAuthenticate } = useFaceIO();
   const { candidates, isEligible, hasVoted } = electionRecords;
+  const [inFacialAuth, setInFacialAuth] = useState(false);
   const [idNumber, setIdNumber] = useState("");
   const [selectedCandidate, setSelectedCandidate] = useState("");
 
@@ -47,8 +49,9 @@ export default function Vote() {
 
   const handleVote = async () => {
     if (identityNumber && selectedCandidate) {
-      const faceData = await handleAuthenticate();
-      if (!faceData.facialId) {
+      setInFacialAuth(true);
+      const { facialId } = await handleAuthenticate();
+      if (!facialId) {
         Swal.fire({
           text: `Face capture failed. Try again!`,
           icon: "error",
@@ -59,8 +62,13 @@ export default function Vote() {
         return;
       }
 
+      setTimeout(() => {
+        setInFacialAuth(false);
+      }, 2000);
+
       const currentTime = toInt(Date.now() / 1000);
       await vote({
+        facialId,
         voterIdentityNumber: identityNumber,
         candidateNominationNumber: selectedCandidate,
         currentTime,
@@ -106,10 +114,13 @@ export default function Vote() {
 
   if (!isEligible) {
     return (
-      <div className="vote p-3 mt-5">
+      <div className="vote text-center p-3 mt-5">
         <h5 className="text-center text-secondary">
           It seems you've not registered. Please register to be eligible to vote
         </h5>
+        <NavLink className="btn register-link" to="/register">
+          Register
+        </NavLink>
       </div>
     );
   }
@@ -130,28 +141,32 @@ export default function Vote() {
   }
 
   return (
-    <div className="vote p-3 mt-3">
-      <h2 className="mb-4">Vote</h2>
-      {candidates &&
-        candidates.map((candidate, index) => (
-          <CandidateItem
-            key={index}
-            candidate={candidate}
-            isSelectedCandidate={
-              candidate.nominationNumber === selectedCandidate
-            }
-            onSelectCandidate={handleSelectCandidate}
-          />
-        ))}
-      <div className="d-flex justify-content-end mt-3">
-        <Button
-          text="vote"
-          classes="btn btn-lg border-light px-4 w-25"
-          disabled={!connected || !selectedCandidate}
-          loading={requesting && requestType === "vote"}
-          onClick={handleVote}
-        />
-      </div>
-    </div>
+    <>
+      {!inFacialAuth && (
+        <div className="vote p-3 mt-3">
+          <h2 className="mb-4">Vote</h2>
+          {candidates &&
+            candidates.map((candidate, index) => (
+              <CandidateItem
+                key={index}
+                candidate={candidate}
+                isSelectedCandidate={
+                  candidate.nominationNumber === selectedCandidate
+                }
+                onSelectCandidate={handleSelectCandidate}
+              />
+            ))}
+          <div className="d-flex justify-content-end mt-3">
+            <Button
+              text="vote"
+              classes="btn btn-lg border-light px-4 w-25"
+              disabled={!connected || !selectedCandidate}
+              loading={requesting && requestType === "vote"}
+              onClick={handleVote}
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 }

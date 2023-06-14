@@ -41,8 +41,12 @@ export default function RegisterForm() {
         return;
       }
 
-      const faceData = await handleEnroll(fullName, address, identityNumber);
-      if (!faceData.facialId) {
+      const { facialId } = await handleEnroll(
+        fullName,
+        address,
+        identityNumber
+      );
+      if (!facialId) {
         Swal.fire({
           text: `Face capture failed. Try again!`,
           icon: "error",
@@ -55,6 +59,7 @@ export default function RegisterForm() {
 
       await register({
         identityNumber,
+        facialId,
         fullName,
         age,
         stateCode,

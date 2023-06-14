@@ -13,7 +13,7 @@ const supportedChain = {
 };
 
 const addresses = {
-  ballot: "0x3C356226e24b15f9d04D8a6A2Dbc38DB72641d33",
+  ballot: "0xc39c9744f6599f454337e566601551bBEEe83bDA",
 };
 
 const abis = {

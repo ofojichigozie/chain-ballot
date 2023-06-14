@@ -299,11 +299,25 @@ function Web3Provider({ children }) {
       dispatch({ type: ACTIONS.SET_REQUEST_TYPE, payload: "register" });
 
       try {
-        const { fullName, identityNumber, age, stateCode, constituencyCode } =
-          details;
-        await state.ballotContract
+        const {
+          fullName,
+          facialId,
+          identityNumber,
+          age,
+          stateCode,
+          constituencyCode,
+        } = details;
+        const tx = await state.ballotContract
           .connect(state.signer)
-          .register(fullName, identityNumber, age, stateCode, constituencyCode);
+          .register(
+            fullName,
+            facialId,
+            identityNumber,
+            age,
+            stateCode,
+            constituencyCode
+          );
+        await tx.wait();
 
         const store = JSON.stringify({
           address: state.address,
@@ -349,11 +363,21 @@ function Web3Provider({ children }) {
       dispatch({ type: ACTIONS.SET_REQUEST_TYPE, payload: "vote" });
 
       try {
-        const { candidateNominationNumber, voterIdentityNumber, currentTime } =
-          details;
-        await state.ballotContract
+        const {
+          candidateNominationNumber,
+          voterIdentityNumber,
+          facialId,
+          currentTime,
+        } = details;
+        const tx = await state.ballotContract
           .connect(state.signer)
-          .vote(candidateNominationNumber, voterIdentityNumber, currentTime);
+          .vote(
+            candidateNominationNumber,
+            voterIdentityNumber,
+            facialId,
+            currentTime
+          );
+        await tx.wait();
 
         await fetchElectionRecords();
 
