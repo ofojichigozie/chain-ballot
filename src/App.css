@@ -116,7 +116,8 @@ main p {
 
 .register input,
 .register select,
-.results select {
+.results select,
+.vote input {
   font-size: 1rem !important;
   background: transparent !important;
   border: 1px solid rgba(255, 255, 255, 0.26);
@@ -135,7 +136,10 @@ main p {
 
 .register input:-webkit-autofill,
 .register input:-webkit-autofill:hover,
-.register input:-webkit-autofill:focus {
+.register input:-webkit-autofill:focus,
+.vote input:-webkit-autofill,
+.vote input:-webkit-autofill:hover,
+.vote input:-webkit-autofill:focus {
   border: 1px solid rgba(255, 255, 255, 0.26);
   -webkit-text-fill-color: rgb(246, 255, 125);
   -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
@@ -155,6 +159,13 @@ main p {
 .vote,
 .results {
   width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.vote
+.idn-detect {
+  width: 500px;
   max-width: 100%;
   margin: 0 auto;
 }

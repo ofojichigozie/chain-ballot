@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import Button from "./Button";
 import useWeb3 from "../hooks/useWeb3";
+import useFaceIO from "../hooks/useFaceIO";
 import { findVoter, verifyIdentityNumber } from "../api";
 
 export default function RegisterForm() {
-  const { connected, requesting, requestType, register } = useWeb3();
+  const { connected, address, requesting, requestType, register } = useWeb3();
+  const { handleEnroll } = useFaceIO();
   const [identityNumber, setIdentityNumber] = useState("");
   const [fullName, setFullName] = useState("");
   const [age, setAge] = useState("");
@@ -31,6 +33,18 @@ export default function RegisterForm() {
       if (+age < 18) {
         Swal.fire({
           text: `You must be 18 years old and above to register`,
+          icon: "error",
+          padding: "3em",
+          color: "#716add",
+          backdrop: `rgba(0,0,0,0.8)`,
+        });
+        return;
+      }
+
+      const faceData = await handleEnroll(fullName, address, identityNumber);
+      if (!faceData.facialId) {
+        Swal.fire({
+          text: `Face capture failed. Try again!`,
           icon: "error",
           padding: "3em",
           color: "#716add",

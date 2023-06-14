@@ -145,6 +145,7 @@ function Web3Provider({ children }) {
     // Subscribe to events
     window.ethereum.on("accountsChanged", async function (accounts) {
       await initialize();
+      window.location.reload();
     });
     window.ethereum.on("chainChanged", async function (networkId) {
       await initialize();
@@ -222,6 +223,18 @@ function Web3Provider({ children }) {
         state.ballotContract.getResults(Date.now() * 2),
       ]);
 
+      hasVoted = {
+        hasVoted: hasVoted.userVoted_,
+        candidate: {
+          name: hasVoted.candidate_.name,
+          partyShortcut: hasVoted.candidate_.partyShortcut,
+          partyFlag: hasVoted.candidate_.partyFlag,
+          nominationNumber: hasVoted.candidate_.nominationNumber.toString(),
+          stateCode: hasVoted.candidate_.stateCode,
+          constituencyCode: hasVoted.candidate_.constituencyCode,
+        },
+      };
+
       candidates = candidates.map((candidate) => ({
         name: candidate.name,
         partyShortcut: candidate.partyShortcut,
@@ -253,6 +266,31 @@ function Web3Provider({ children }) {
         payload: electionRecords,
       });
     }
+  };
+
+  const reloadElectionRecords = async (identityNumber) => {
+    dispatch({ type: ACTIONS.SET_REQUESTING, payload: true });
+    dispatch({ type: ACTIONS.SET_REQUEST_TYPE, payload: "verify" });
+
+    try {
+      const store = JSON.stringify({
+        address: state.address,
+        identityNumber,
+      });
+      localStorage.setItem("chaindata", store);
+
+      dispatch({
+        type: ACTIONS.SET_IDENTITY_NUMBER,
+        payload: identityNumber,
+      });
+
+      await fetchElectionRecords();
+    } catch (error) {
+      console.log(error.message);
+    }
+
+    dispatch({ type: ACTIONS.SET_REQUESTING, payload: false });
+    dispatch({ type: ACTIONS.SET_REQUEST_TYPE, payload: "" });
   };
 
   const register = async (details) => {
@@ -370,7 +408,7 @@ function Web3Provider({ children }) {
 
   useEffect(() => {
     // Remove this
-    console.clear();
+    // console.clear();
 
     fetchElectionRecords();
 
@@ -384,6 +422,7 @@ function Web3Provider({ children }) {
         connect,
         disconnect,
         showAccount,
+        reloadElectionRecords,
         register,
         vote,
       }}

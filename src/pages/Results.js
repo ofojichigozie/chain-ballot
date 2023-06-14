@@ -25,7 +25,7 @@ export default function Results() {
   if (!connected) {
     return (
       <div className="resultsF p-3 mt-5">
-        <h5 className="text-center">
+        <h5 className="text-center text-secondary">
           Please connect your wallet to view results
         </h5>
       </div>
