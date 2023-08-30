@@ -5,7 +5,7 @@ const useFaceIO = () => {
 
   useEffect(() => {
     // eslint-disable-next-line
-    const faceio = new faceIO("fioa1658");
+    const faceio = new faceIO("fioa78c7");
     setFaceio(faceio);
   }, []);
 
