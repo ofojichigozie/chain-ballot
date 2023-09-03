@@ -65,6 +65,10 @@ export default function RegisterForm() {
         stateCode,
         constituencyCode,
       });
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     }
   };
 
